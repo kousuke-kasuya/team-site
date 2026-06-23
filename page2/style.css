@@ -1,7 +1,704 @@
 /* ============================================================
-   style.css — page2 専用スタイル
-   このファイルに自分のスタイルを自由に書いてください。
-   common.css のスタイルをここで上書きすることもできます。
-
-   【注意】他のページには影響しないので、遠慮なく書いてOKです。
+   style.css — page2（学部紹介）専用スタイル
    ============================================================ */
+
+/* ===== 全体設定・インポートフォント適用 ===== */
+body {
+  font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+  background-color: #f9fbfd;
+  color: #2c3e50;
+  overflow-x: hidden;
+}
+
+/* 共通コンテナ */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 共通セクションタイトル */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+  letter-spacing: 0.05em;
+  color: #1a202c;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), #ff9f43);
+  border-radius: 2px;
+}
+
+/* ===== ヒーローセクション ===== */
+.hero-section {
+  position: relative;
+  padding: 120px 24px 100px;
+  background: radial-gradient(circle at 80% 20%, rgba(245, 197, 24, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 10% 80%, rgba(9, 132, 227, 0.05) 0%, transparent 50%),
+              #0f172a;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--color-primary);
+  display: inline-block;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, #ffffff 30%, #f5c518 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.hero-scroll-indicator {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.7;
+}
+
+.scroll-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #94a3b8;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, #94a3b8, transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: var(--color-primary);
+  animation: scrollAnim 2s infinite ease-in-out;
+}
+
+@keyframes scrollAnim {
+  0% { transform: translateY(-20px); }
+  100% { transform: translateY(40px); }
+}
+
+/* ===== 学部紹介グリッド ===== */
+.faculties-section {
+  padding: 80px 0;
+  background-color: #f8fafc;
+}
+
+.faculties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 20px;
+}
+
+/* 学部カード */
+.faculty-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.faculty-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.faculty-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.faculty-card:hover .faculty-img {
+  transform: scale(1.05);
+}
+
+/* バッジ */
+.card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.info-badge { background-color: rgba(9, 132, 227, 0.85); }
+.design-badge { background-color: rgba(235, 94, 40, 0.85); }
+.global-badge { background-color: rgba(38, 166, 91, 0.85); }
+
+/* カードコンテンツ */
+.card-content {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.faculty-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.faculty-english {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.faculty-summary {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+/* 専攻タグ */
+.specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.specialty-tag {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.faculty-card:hover .specialty-tag {
+  background-color: #e2e8f0;
+}
+
+/* ボタン */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn i {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+  transform: translateX(4px);
+}
+
+.btn-info {
+  background-color: rgba(9, 132, 227, 0.08);
+  color: #0984e3;
+}
+.btn-info:hover {
+  background-color: #0984e3;
+  color: #ffffff;
+}
+
+.btn-design {
+  background-color: rgba(235, 94, 40, 0.08);
+  color: #eb5e28;
+}
+.btn-design:hover {
+  background-color: #eb5e28;
+  color: #ffffff;
+}
+
+.btn-global {
+  background-color: rgba(38, 166, 91, 0.08);
+  color: #26a65b;
+}
+.btn-global:hover {
+  background-color: #26a65b;
+  color: #ffffff;
+}
+
+/* ===== 特徴比較セクション ===== */
+.features-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  border: 1px solid #e2e8f0;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 800px;
+}
+
+.comparison-table th, 
+.comparison-table td {
+  padding: 18px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.comparison-table th {
+  font-weight: 700;
+  background-color: #f8fafc;
+  color: #334155;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.comparison-table th.th-info {
+  border-top: 4px solid #0984e3;
+}
+.comparison-table th.th-design {
+  border-top: 4px solid #eb5e28;
+}
+.comparison-table th.th-global {
+  border-top: 4px solid #26a65b;
+}
+
+.comparison-table td {
+  color: #475569;
+  line-height: 1.5;
+}
+
+.td-label {
+  font-weight: 600;
+  color: #1e293b;
+  background-color: #f8fafc;
+  width: 180px;
+}
+
+.comparison-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* ===== 学習環境セクション ===== */
+.environment-section {
+  padding: 100px 0;
+  background: radial-gradient(circle at 10% 10%, rgba(9, 132, 227, 0.03) 0%, transparent 40%),
+              radial-gradient(circle at 90% 90%, rgba(245, 197, 24, 0.03) 0%, transparent 40%),
+              #f8fafc;
+  overflow: hidden;
+}
+
+.env-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.env-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.env-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 24px;
+}
+
+.env-desc {
+  font-size: 1.05rem;
+  color: #475569;
+  margin-bottom: 40px;
+}
+
+.env-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.env-list li {
+  display: flex;
+  gap: 20px;
+}
+
+.env-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-primary);
+  color: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  margin-top: 3px;
+  box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);
+}
+
+.env-list strong {
+  font-size: 1.1rem;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.env-list p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* ビジュアルデコレーション */
+.env-visual {
+  position: relative;
+  height: 380px;
+}
+
+.env-card {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.env-card i {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.env-card-1 {
+  top: 15%;
+  left: 5%;
+  animation: floatCard1 4s infinite ease-in-out;
+}
+.env-card-1 i {
+  background-color: rgba(9, 132, 227, 0.1);
+  color: #0984e3;
+}
+
+.env-card-2 {
+  top: 45%;
+  right: 5%;
+  animation: floatCard2 4.5s infinite ease-in-out;
+}
+.env-card-2 i {
+  background-color: rgba(235, 94, 40, 0.1);
+  color: #eb5e28;
+}
+
+.env-card-3 {
+  bottom: 10%;
+  left: 15%;
+  animation: floatCard3 3.8s infinite ease-in-out;
+}
+.env-card-3 i {
+  background-color: rgba(38, 166, 91, 0.1);
+  color: #26a65b;
+}
+
+.env-circle-deco {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 200px;
+  height: 200px;
+  border: 2px dashed rgba(245, 197, 24, 0.2);
+  border-radius: 50%;
+  animation: rotateDeco 20s infinite linear;
+  z-index: 0;
+}
+
+@keyframes floatCard1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatCard2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatCard3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes rotateDeco {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== レスポンシブ設計 ===== */
+@media (max-width: 960px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .env-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .env-visual {
+    height: 300px;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .env-card-1 { left: 0; }
+  .env-card-2 { right: 0; }
+  .env-card-3 { left: 10%; }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 80px 16px 60px;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .faculties-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== 偏差値バッジ＆メタデータのデザイン ===== */
+.faculty-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.faculty-meta .faculty-english {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+.deviation-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.score-high {
+  background-color: #ffeef0;
+  color: #ff3860;
+  border: 1px solid rgba(255, 56, 96, 0.25);
+}
+
+.score-mid {
+  background-color: #fff8eb;
+  color: #eb5e28;
+  border: 1px solid rgba(235, 94, 40, 0.25);
+}
+
+.score-normal {
+  background-color: #eefaf2;
+  color: #26a65b;
+  border: 1px solid rgba(38, 166, 91, 0.25);
+}
+
+/* 比較テーブル内の偏差値デザイン */
+.table-deviation {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.th-info .table-deviation {
+  background-color: rgba(9, 132, 227, 0.1);
+  color: #0984e3;
+}
+
+.th-design .table-deviation {
+  background-color: rgba(235, 94, 40, 0.1);
+  color: #eb5e28;
+}
+
+.th-global .table-deviation {
+  background-color: rgba(38, 166, 91, 0.1);
+  color: #26a65b;
+}
+
+/* モバイル対応調整 */
+@media (max-width: 480px) {
+  .faculty-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* ===== 定員バッジのデザイン ===== */
+.meta-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.capacity-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+/* 比較テーブル内の定員デザイン */
+.table-capacity {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  margin-left: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.th-info .table-capacity {
+  background-color: rgba(9, 132, 227, 0.05);
+  color: #0984e3;
+  border-color: rgba(9, 132, 227, 0.15);
+}
+
+.th-design .table-capacity {
+  background-color: rgba(235, 94, 40, 0.05);
+  color: #eb5e28;
+  border-color: rgba(235, 94, 40, 0.15);
+}
+
+.th-global .table-capacity {
+  background-color: rgba(38, 166, 91, 0.05);
+  color: #26a65b;
+  border-color: rgba(38, 166, 91, 0.15);
+}
+
+/* モバイル対応時のバッジ配置調整 */
+@media (max-width: 480px) {
+  .meta-badges {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+}

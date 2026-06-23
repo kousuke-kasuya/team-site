@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ページタイトルを変更してください（例：アクセス | カフェ名） -->
-  <title>ページ2 | サイト名</title>
+  <meta name="description" content="湘南デジタル未来大学の学部紹介ページです。疑似早稲田医学部、世界ジャポネズム化計画学部、ライフログデータサイエンス学部の3つのユニークな学部で、未来を切り拓くスキルを身につけます。">
+  <title>学部紹介 | 湘南デジタル未来大学</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- 共通スタイル（ヘッダー・ナビ・フッター） -->
   <link rel="stylesheet" href="../css/common.css">
   <!-- このページ専用スタイル（style.css に自由に書いてください） -->
@@ -25,8 +31,215 @@
   </header>
 
   <!-- ===== メインコンテンツ ===== -->
-  <main>
-    <!-- ここにコンテンツを追加してください -->
+  <main class="faculty-page">
+    <!-- ヒーローセクション -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-subtitle">FACULTIES</span>
+        <h1 class="hero-title">未来を切り拓く、3つのアプローチ</h1>
+        <p class="hero-description">湘南デジタル未来大学では、先端技術、日本文化のグローバル発信、そして日々の暮らしのデータ解析を融合し、次世代のリーダーを育成するための3つの魅力的な学部を用意しています。</p>
+      </div>
+      <div class="hero-scroll-indicator">
+        <span class="scroll-text">SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- 学部紹介セクション -->
+    <section class="faculties-section" id="faculties-grid">
+      <div class="container">
+        <h2 class="section-title">展開する学部</h2>
+        <div class="faculties-grid">
+          
+          <!-- カード1: 疑似早稲田医学部 -->
+          <div class="faculty-card info-card">
+            <div class="card-img-wrapper">
+              <img src="images/faculty_info.png" alt="疑似早稲田医学部 イメージ" class="faculty-img">
+              <div class="card-badge info-badge">疑似医学 & 先端医療データ</div>
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">疑似早稲田医学部</h3>
+              <div class="faculty-meta">
+                <p class="faculty-english">Pseudo Waseda Faculty of Medicine</p>
+                <div class="meta-badges">
+                  <span class="deviation-badge score-high">偏差値: 79</span>
+                  <span class="capacity-badge">定員: 12名</span>
+                </div>
+              </div>
+              <p class="faculty-summary">「早稲田には存在しないはずの医学部」をあえてデジタル上に構築。バーチャル臨床訓練、医療データマイニング、AIを活用した模擬診断など、最先端のデジタル医療技術を探求します。</p>
+              
+              <div class="specialties">
+                <span class="specialty-tag">バーチャル臨床</span>
+                <span class="specialty-tag">医療データ解析</span>
+                <span class="specialty-tag">AI診断システム</span>
+              </div>
+              
+              <a href="#" class="btn btn-info">
+                <span>学部詳細を見る</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- カード2: 世界ジャポネズム化計画学部 -->
+          <div class="faculty-card design-card">
+            <div class="card-img-wrapper">
+              <img src="images/faculty_design.png" alt="世界ジャポネズム化計画学部 イメージ" class="faculty-img">
+              <div class="card-badge design-badge">日本文化 & グローバル発信</div>
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">世界ジャポネズム化計画学部</h3>
+              <div class="faculty-meta">
+                <p class="faculty-english">Faculty of World Japonism Projection</p>
+                <div class="meta-badges">
+                  <span class="deviation-badge score-mid">偏差値: 44</span>
+                  <span class="capacity-badge">定員: 1225名</span>
+                </div>
+              </div>
+              <p class="faculty-summary">「世界のあらゆる領域を日本文化（ジャポネズム）で染め上げる」ことを目的とした壮大な学部。アニメ・漫画・伝統芸能から侘び寂びの美意識まで、デジタルメディアを駆使して新たなムーブメントを巻き起こします。</p>
+              
+              <div class="specialties">
+                <span class="specialty-tag">ポップカルチャー発信</span>
+                <span class="specialty-tag">デジタル伝統表現</span>
+                <span class="specialty-tag">日本美意識設計</span>
+              </div>
+              
+              <a href="#" class="btn btn-design">
+                <span>学部詳細を見る</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- カード3: ライフログデータサイエンス学部 -->
+          <div class="faculty-card global-card">
+            <div class="card-img-wrapper">
+              <img src="images/faculty_global.png" alt="ライフログデータサイエンス学部 イメージ" class="faculty-img">
+              <div class="card-badge global-badge">日常解析 & スマートライフ</div>
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">ライフログデータサイエンス学部</h3>
+              <div class="faculty-meta">
+                <p class="faculty-english">Faculty of Lifelog Data Science</p>
+                <div class="meta-badges">
+                  <span class="deviation-badge score-normal">偏差値: 62</span>
+                  <span class="capacity-badge">定員: 8名</span>
+                </div>
+              </div>
+              <p class="faculty-summary">ウェアラブルデバイス、SNS、購買履歴など、個人の「日常（ライフログ）」から得られる膨大な行動データを収集・分析。人間の行動科学とデータ解析を融合し、ウェルビーイングにアプローチします。</p>
+              
+              <div class="specialties">
+                <span class="specialty-tag">行動データマイニング</span>
+                <span class="specialty-tag">スマートヘルスケア</span>
+                <span class="specialty-tag">ウェルビーイング設計</span>
+              </div>
+              
+              <a href="#" class="btn btn-global">
+                <span>学部詳細を見る</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 特徴・比較セクション -->
+    <section class="features-section">
+      <div class="container">
+        <h2 class="section-title">3つの学びの比較</h2>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th class="th-info">疑似早稲田医学部<br><span class="table-deviation">偏差値: 79</span><br><span class="table-capacity">定員: 12名</span></th>
+                <th class="th-design">世界ジャポネズム化計画学部<br><span class="table-deviation">偏差値: 44</span><br><span class="table-capacity">定員: 1225名</span></th>
+                <th class="th-global">ライフログデータサイエンス学部<br><span class="table-deviation">偏差値: 62</span><br><span class="table-capacity">定員: 8名</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-label">主な学習テーマ</td>
+                <td>疑似臨床データ解析、AI診断アルゴリズム、医療システム設計</td>
+                <td>日本文化メディア論、海外プロモーション、デジタルコンテンツ表現</td>
+                <td>ライフログデータ解析、行動科学、スマートウェルビーイング</td>
+              </tr>
+              <tr>
+                <td class="td-label">目指す職種</td>
+                <td>医療データアナリスト、ヘルスケアエンジニア、疑似医療システムプランナー</td>
+                <td>カルチャープロデューサー、海外事業展開プランナー、コンテンツプランナー</td>
+                <td>ライフログデータアナリスト、スマートライフプランナー、行動データマーケター</td>
+              </tr>
+              <tr>
+                <td class="td-label">推奨されるスキル</td>
+                <td>倫理的思考力、データマイニング力、高い論理的思考</td>
+                <td>日本文化への愛、柔軟な発想力、グローバル視点</td>
+                <td>人間観察力、統計的アプローチ、課題発見能力</td>
+              </tr>
+              <tr>
+                <td class="td-label">卒業制作 / 演習</td>
+                <td>バーチャル診断支援AIの構築や、疑似臨床データの解析シミュレーション</td>
+                <td>特定の国・地域をターゲットにした「ジャポネズムプロジェクション計画」の企画立案・実証</td>
+                <td>ウェアラブルデータを用いた生活改善アプリの提案や健康増進シミュレーション</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 学習環境セクション -->
+    <section class="environment-section">
+      <div class="container">
+        <div class="env-layout">
+          <div class="env-text-content">
+            <span class="env-badge">LEARNING ENVIRONMENT</span>
+            <h2 class="env-title">最高の環境で、限界を越える</h2>
+            <p class="env-desc">湘南デジタル未来大学では、学部ごとの専門性を高めるための最新設備と、学部を越えてコラボレーションできるオープンスペースを完備しています。</p>
+            <ul class="env-list">
+              <li>
+                <i class="fa-solid fa-check env-icon"></i>
+                <div>
+                  <strong>疑似早稲田バーチャルクリニック</strong>
+                  <p>VR/ARを活用した疑似的な臨床訓練や、医療データ処理のためのシミュレーション環境。</p>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-check env-icon"></i>
+                <div>
+                  <strong>ジャポネズム・クリエイティブ・スタジオ</strong>
+                  <p>日本文化のデジタル表現に特化し、茶室調の空間と最新のホログラム投影設備が同居するデジタル庵。</p>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-check env-icon"></i>
+                <div>
+                  <strong>ライフログデータ・アナリティクス・センター</strong>
+                  <p>世界中のウェアラブルデータや行動ログをリアルタイムで収集・可視化するスマートデータ室。</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="env-visual">
+            <div class="env-card env-card-1">
+              <i class="fa-solid fa-heartpulse"></i>
+              <span>Pseudo Clinic</span>
+            </div>
+            <div class="env-card env-card-2">
+              <i class="fa-solid fa-fan"></i>
+              <span>Japonism Studio</span>
+            </div>
+            <div class="env-card env-card-3">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Data Center</span>
+            </div>
+            <div class="env-circle-deco"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ===== フッター（common.css で管理） ===== -->
