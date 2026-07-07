@@ -90,3 +90,137 @@ body {
   padding: 20px;
   font-size: 0.85rem;
 }
+
+
+/* ============================================================
+   ハンバーガーメニュー（スマホ用）
+   ============================================================ */
+
+/* ハンバーガーボタン本体：PC では非表示 */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  z-index: 1001;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 三本線 */
+.menu-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity   0.25s ease,
+              width     0.25s ease;
+  transform-origin: center;
+}
+
+/* アクティブ時：✕ に変化 */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== スマホ表示（768px 以下）===== */
+@media (max-width: 768px) {
+  /* ヘッダー高さを少し広げる */
+  .site-nav {
+    height: 60px;
+    position: relative;
+  }
+
+  /* ハンバーガーボタンを表示 */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* ナビリンクリスト：デフォルトで非表示 */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(80vw, 280px);
+    height: 100dvh;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-left: 1px solid rgba(245, 197, 24, 0.2);
+    padding: 80px 0 32px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1000;
+    list-style: none;
+    overflow-y: auto;
+  }
+
+  /* メニューオープン時：スライドイン */
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  /* 各リンクアイテム */
+  .nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 18px 28px;
+    font-size: 1rem;
+    color: #ffffff;
+    letter-spacing: 0.04em;
+    transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    background: rgba(245, 197, 24, 0.1);
+    color: var(--color-primary);
+    padding-left: 36px;
+  }
+
+  /* メニューが開いているとき、背景スクロールを防ぐ */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* 背景を暗くするオーバーレイ */
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeInOverlay 0.3s ease forwards;
+  }
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+

@@ -2,6 +2,10 @@
    style.css — page2（学部紹介）専用スタイル
    ============================================================ */
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ===== 全体設定・インポートフォント適用 ===== */
 body {
   font-family: 'Outfit', 'Noto Sans JP', sans-serif;
@@ -301,6 +305,7 @@ body {
 .features-section {
   padding: 80px 0;
   background-color: #ffffff;
+  scroll-margin-top: 40px; /* スムーススクロール時の余白 */
 }
 
 .table-wrapper {

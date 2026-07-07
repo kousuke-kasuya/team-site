@@ -1,0 +1,495 @@
+/* ============================================================
+   style.css — SDFUトップページ (Home) 専用スタイル
+   ============================================================ */
+
+/* ===== 全体設定・インポートフォント適用 ===== */
+body {
+  font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+  background-color: #f8fafc;
+  color: #2c3e50;
+  overflow-x: hidden;
+}
+
+/* 共通コンテナ */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 共通セクションタイトル */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), #ff9f43);
+  border-radius: 2px;
+}
+
+/* ===== ヒーローセクション ===== */
+.home-hero {
+  position: relative;
+  min-height: 580px;
+  padding: 140px 24px 120px;
+  background-image: url('images/hero_main.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.7) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.hero-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  background-color: rgba(245, 197, 24, 0.1);
+  padding: 6px 16px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(245, 197, 24, 0.2);
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  max-width: 680px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ボタン共通 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #1a1a1a;
+  box-shadow: 0 4px 14px rgba(245, 197, 24, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #ffda44;
+  box-shadow: 0 6px 20px rgba(245, 197, 24, 0.4);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== ニュースセクション ===== */
+.news-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.news-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.news-date {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #94a3b8;
+  font-family: 'Outfit', sans-serif;
+}
+
+.news-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.tag-important { background-color: #ef4444; }
+.tag-event { background-color: #3b82f6; }
+.tag-press { background-color: #10b981; }
+
+.news-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.news-title a {
+  color: #1e293b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.news-title a:hover {
+  color: var(--color-primary);
+}
+
+/* ===== 学部紹介ダイジェスト ===== */
+.intro-faculties-section {
+  padding: 100px 0;
+  background-color: #f8fafc;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.intro-card {
+  background-color: #ffffff;
+  padding: 48px 36px;
+  border-radius: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.06);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+}
+
+.card-waseda .card-icon {
+  background-color: rgba(9, 132, 227, 0.08);
+  color: #0984e3;
+}
+.card-japonism .card-icon {
+  background-color: rgba(235, 94, 40, 0.08);
+  color: #eb5e28;
+}
+.card-lifelog .card-icon {
+  background-color: rgba(38, 166, 91, 0.08);
+  color: #26a65b;
+}
+
+.intro-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.intro-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card-waseda .card-link { color: #0984e3; }
+.card-japonism .card-link { color: #eb5e28; }
+.card-lifelog .card-link { color: #26a65b; }
+
+.card-link i {
+  transition: transform 0.2s;
+}
+.card-link:hover i {
+  transform: translateX(4px);
+}
+
+/* ===== レスポンシブ設計 ===== */
+@media (max-width: 960px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .news-meta {
+    width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    min-height: 480px;
+    padding: 100px 16px 80px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== トップページ 沿革セクション ===== */
+.home-history-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.home-timeline {
+  max-width: 860px;
+  margin: 0 auto 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.home-tl-item {
+  display: grid;
+  grid-template-columns: 64px 32px 1fr;
+  gap: 0 16px;
+  align-items: stretch;
+  min-height: 96px;
+}
+
+.home-tl-year {
+  text-align: right;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  font-family: 'Outfit', sans-serif;
+  padding-top: 2px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.home-tl-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.home-tl-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #e2e8f0, #cbd5e1);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home-tl-item:last-child .home-tl-bar::before {
+  bottom: auto;
+  height: 20px;
+}
+
+.home-tl-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #cbd5e1;
+  z-index: 1;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.home-tl-dot--current {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  box-shadow: 0 0 0 5px rgba(245, 197, 24, 0.2);
+}
+
+.home-tl-item:hover .home-tl-dot {
+  border-color: var(--color-primary);
+  transform: scale(1.25);
+}
+
+.home-tl-body {
+  padding: 0 0 36px 8px;
+}
+
+.home-tl-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.home-tl-body p {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* 沿革 CTAリンク */
+.history-cta {
+  text-align: center;
+}
+
+.history-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #475569;
+  transition: all 0.3s ease;
+}
+
+.history-cta-link:hover {
+  border-color: var(--color-primary);
+  color: #1a1a1a;
+  background-color: rgba(245, 197, 24, 0.05);
+}
+
+.history-cta-link i {
+  transition: transform 0.2s ease;
+}
+
+.history-cta-link:hover i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .home-tl-item {
+    grid-template-columns: 48px 24px 1fr;
+    gap: 0 12px;
+  }
+  .home-tl-year {
+    font-size: 1.1rem;
+  }
+}
+

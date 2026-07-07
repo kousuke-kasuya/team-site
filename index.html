@@ -3,29 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- サイト名を変更してください -->
-  <title>サイト名</title>
+  <meta name="description" content="湘南デジタル未来大学（SDFU）の公式サイトです。先端技術、グローバル発信、日常データ解析を融合し、次世代のイノベーターを育成します。">
+  <title>湘南デジタル未来大学</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- 共通スタイル（ヘッダー・ナビ・フッター） -->
   <link rel="stylesheet" href="css/common.css">
+  <!-- このページ専用スタイル -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== ヘッダー（common.css で管理） ===== -->
-  <!-- サイト名・リンク先を変えたいときは css/common.css ではなくここのテキストを編集してください -->
   <header class="site-header">
     <nav class="site-nav">
-      <a href="index.html" class="nav-logo">サイト名</a>
-      <ul class="nav-links">
+      <a href="index.html" class="nav-logo">湘南デジタル未来大学</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉する">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">トップ</a></li>
-        <li><a href="page1/index.html">ページ1</a></li>
-        <li><a href="page2/index.html">ページ2</a></li>
+        <li><a href="page1/index.html">About</a></li>
+        <li><a href="page2/index.html">学部紹介</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- ===== メインコンテンツ ===== -->
-  <main>
-    <!-- ここにコンテンツを追加してください -->
+  <main class="home-page">
+    <!-- メインヒーローセクション -->
+    <section class="home-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> SHONAN DIGITAL FUTURE UNIVERSITY</span>
+        <h1 class="hero-title">デジタルテクノロジーで、<br>まだ見ぬ未来を実装する。</h1>
+        <p class="hero-desc">湘南デジタル未来大学は、先端AI技術、世界に誇るジャポネズム文化の発信、そして日常生活を科学するデータサイエンスが融合した次世代型の大学です。</p>
+        <div class="hero-actions">
+          <a href="page2/index.html" class="btn btn-primary">
+            <span>学部紹介を見る</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="page1/index.html" class="btn btn-secondary">
+            <span>About SDFU</span>
+            <i class="fa-solid fa-circle-info"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ニュースセクション -->
+    <section class="news-section">
+      <div class="container">
+        <h2 class="section-title">News & Topics</h2>
+        <div class="news-list">
+          
+          <article class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2026.04.01</span>
+              <span class="news-category tag-important">重要</span>
+            </div>
+            <h3 class="news-title"><a href="#">2026年度新入生の皆様へ：学長メッセージと新学部体制のスタートについて</a></h3>
+          </article>
+
+          <article class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2026.03.15</span>
+              <span class="news-category tag-event">イベント</span>
+            </div>
+            <h3 class="news-title"><a href="#">【オープンキャンパス2026】5月開催スケジュールおよび参加予約受付開始のお知らせ</a></h3>
+          </article>
+
+          <article class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2026.02.20</span>
+              <span class="news-category tag-press">プレスリリース</span>
+            </div>
+            <h3 class="news-title"><a href="#">「疑似稲田医学部」と「世界ジャポネズム化計画学部」による共同研究プロジェクトが発足</a></h3>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 特徴的な3学部ダイジェスト -->
+    <section class="intro-faculties-section">
+      <div class="container">
+        <h2 class="section-title">展開する3つの学部</h2>
+        <div class="intro-grid">
+
+          <!-- 学部1 -->
+          <div class="intro-card card-waseda">
+            <div class="card-icon"><i class="fa-solid fa-heartpulse"></i></div>
+            <h3>疑似稲田医学部</h3>
+            <p>あえてデジタル上に構築された「稲田には存在しないはずの医学部」。バーチャル臨床訓練やAI模擬診断など、最先端のデジタル医療技術を探求します。</p>
+            <a href="page2/index.html#faculties-grid" class="card-link">学部詳細へ <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+
+          <!-- 学部2 -->
+          <div class="intro-card card-japonism">
+            <div class="card-icon"><i class="fa-solid fa-fan"></i></div>
+            <h3>世界ジャポネズム化計画学部</h3>
+            <p>「世界のあらゆる領域を日本文化で染め上げる」ことを目的とした壮大な学部。アニメ・伝統芸能・侘び寂びをデジタルメディアで世界に発信します。</p>
+            <a href="page2/index.html#faculties-grid" class="card-link">学部詳細へ <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+
+          <!-- 学部3 -->
+          <div class="intro-card card-lifelog">
+            <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>ライフログデータサイエンス学部</h3>
+            <p>日常の購買履歴、SNS、ウェアラブルデータなどの膨大なログを収集・分析。行動科学とデータ解析を融合し、社会のウェルビーイングにアプローチします。</p>
+            <a href="page2/index.html#faculties-grid" class="card-link">学部詳細へ <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 大学の沿革 -->
+    <section class="home-history-section">
+      <div class="container">
+        <h2 class="section-title">大学の沿革</h2>
+        <div class="home-timeline">
+
+          <div class="home-tl-item">
+            <div class="home-tl-year">2020</div>
+            <div class="home-tl-bar">
+              <div class="home-tl-dot"></div>
+            </div>
+            <div class="home-tl-body">
+              <h3>湘南デジタル未来大学 設立</h3>
+              <p>デジタル技術とクリエイティブの融合を掲げ、湘南キャンパスにて開学。「情報科学部」と「デザイン学部」の2学部でスタート。</p>
+            </div>
+          </div>
+
+          <div class="home-tl-item">
+            <div class="home-tl-year">2022</div>
+            <div class="home-tl-bar">
+              <div class="home-tl-dot"></div>
+            </div>
+            <div class="home-tl-body">
+              <h3>先端AI＆シミュレーションセンター 開設</h3>
+              <p>GPU計算機群を備えた最先端研究センターを設置。バーチャル医療シミュレーションの基盤プロジェクトが始動。</p>
+            </div>
+          </div>
+
+          <div class="home-tl-item">
+            <div class="home-tl-year">2024</div>
+            <div class="home-tl-bar">
+              <div class="home-tl-dot"></div>
+            </div>
+            <div class="home-tl-body">
+              <h3>国際データサイエンス連携プロジェクト開始</h3>
+              <p>世界各国の提携大学とオンラインで直結し、ライフログを用いたスマートシティ構想の共同研究がスタート。</p>
+            </div>
+          </div>
+
+          <div class="home-tl-item">
+            <div class="home-tl-year">2026</div>
+            <div class="home-tl-bar">
+              <div class="home-tl-dot home-tl-dot--current"></div>
+            </div>
+            <div class="home-tl-body">
+              <h3>3大新学部体制へリニューアル</h3>
+              <p>「疑似稲田医学部」「世界ジャポネズム化計画学部」「ライフログデータサイエンス学部」の個性豊かな3学部体制へ刷新。</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="history-cta">
+          <a href="page1/index.html" class="history-cta-link">
+            <span>詳細な沿革・大学概要を見る</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ===== フッター（common.css で管理） ===== -->
@@ -33,6 +191,6 @@
   <footer class="site-footer">
     <p>&copy; 2026 チーム名</p>
   </footer>
-
+  <script src="js/common.js"></script>
 </body>
 </html>

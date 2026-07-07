@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="湘南デジタル未来大学の学部紹介ページです。疑似早稲田医学部、世界ジャポネズム化計画学部、ライフログデータサイエンス学部の3つのユニークな学部で、未来を切り拓くスキルを身につけます。">
+  <meta name="description"
+    content="湘南デジタル未来大学の学部紹介ページです。疑似早稲田医学部、世界ジャポネズム化計画学部、ライフログデータサイエンス学部の3つのユニークな学部で、未来を切り拓くスキルを身につけます。">
   <title>学部紹介 | 湘南デジタル未来大学</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- 共通スタイル（ヘッダー・ナビ・フッター） -->
@@ -16,16 +20,21 @@
   <!-- このページ専用スタイル（style.css に自由に書いてください） -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- ===== ヘッダー（common.css で管理） ===== -->
   <header class="site-header">
     <nav class="site-nav">
-      <a href="../index.html" class="nav-logo">サイト名</a>
-      <ul class="nav-links">
+      <a href="../index.html" class="nav-logo">湘南デジタル未来大学</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="メニューを開閉する">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="../index.html">トップ</a></li>
-        <li><a href="../page1/index.html">ページ1</a></li>
-        <li><a href="index.html">ページ2</a></li>
+        <li><a href="../page1/index.html">About</a></li>
+        <li><a href="index.html">学部紹介</a></li>
       </ul>
     </nav>
   </header>
@@ -37,7 +46,8 @@
       <div class="hero-content">
         <span class="hero-subtitle">FACULTIES</span>
         <h1 class="hero-title">未来を切り拓く、3つのアプローチ</h1>
-        <p class="hero-description">湘南デジタル未来大学では、先端技術、日本文化のグローバル発信、そして日々の暮らしのデータ解析を融合し、次世代のリーダーを育成するための3つの魅力的な学部を用意しています。</p>
+        <p class="hero-description">
+          湘南デジタル未来大学では、先端技術、日本文化のグローバル発信、そして日々の暮らしのデータ解析を融合し、次世代のリーダーを育成するための3つの魅力的な学部を用意しています。</p>
       </div>
       <div class="hero-scroll-indicator">
         <span class="scroll-text">SCROLL</span>
@@ -50,31 +60,32 @@
       <div class="container">
         <h2 class="section-title">展開する学部</h2>
         <div class="faculties-grid">
-          
-          <!-- カード1: 疑似早稲田医学部 -->
+
+          <!-- カード1: 疑似稲田医学部 -->
           <div class="faculty-card info-card">
             <div class="card-img-wrapper">
-              <img src="images/faculty_info.png" alt="疑似早稲田医学部 イメージ" class="faculty-img">
+              <img src="images/faculty_info.png" alt="疑似稲田医学部 イメージ" class="faculty-img">
               <div class="card-badge info-badge">疑似医学 & 先端医療データ</div>
             </div>
             <div class="card-content">
-              <h3 class="faculty-name">疑似早稲田医学部</h3>
+              <h3 class="faculty-name">疑似稲田医学部</h3>
               <div class="faculty-meta">
-                <p class="faculty-english">Pseudo Waseda Faculty of Medicine</p>
+                <p class="faculty-english">Pseudo Inada Faculty of Medicine</p>
                 <div class="meta-badges">
                   <span class="deviation-badge score-high">偏差値: 79</span>
                   <span class="capacity-badge">定員: 12名</span>
                 </div>
               </div>
-              <p class="faculty-summary">「早稲田には存在しないはずの医学部」をあえてデジタル上に構築。バーチャル臨床訓練、医療データマイニング、AIを活用した模擬診断など、最先端のデジタル医療技術を探求します。</p>
-              
+              <p class="faculty-summary">
+                「稲田には存在しないはずの医学部」をあえてデジタル上に構築。バーチャル臨床訓練、医療データマイニング、AIを活用した模擬診断など、最先端のデジタル医療技術を探求します。</p>
+
               <div class="specialties">
                 <span class="specialty-tag">バーチャル臨床</span>
                 <span class="specialty-tag">医療データ解析</span>
                 <span class="specialty-tag">AI診断システム</span>
               </div>
-              
-              <a href="#" class="btn btn-info">
+
+              <a href="#compare-table" class="btn btn-info">
                 <span>学部詳細を見る</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -96,15 +107,16 @@
                   <span class="capacity-badge">定員: 1225名</span>
                 </div>
               </div>
-              <p class="faculty-summary">「世界のあらゆる領域を日本文化（ジャポネズム）で染め上げる」ことを目的とした壮大な学部。アニメ・漫画・伝統芸能から侘び寂びの美意識まで、デジタルメディアを駆使して新たなムーブメントを巻き起こします。</p>
-              
+              <p class="faculty-summary">
+                「世界のあらゆる領域を日本文化（ジャポネズム）で染め上げる」ことを目的とした壮大な学部。アニメ・漫画・伝統芸能から侘び寂びの美意識まで、デジタルメディアを駆使して新たなムーブメントを巻き起こします。</p>
+
               <div class="specialties">
                 <span class="specialty-tag">ポップカルチャー発信</span>
                 <span class="specialty-tag">デジタル伝統表現</span>
                 <span class="specialty-tag">日本美意識設計</span>
               </div>
-              
-              <a href="#" class="btn btn-design">
+
+              <a href="#compare-table" class="btn btn-design">
                 <span>学部詳細を見る</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -126,15 +138,16 @@
                   <span class="capacity-badge">定員: 8名</span>
                 </div>
               </div>
-              <p class="faculty-summary">ウェアラブルデバイス、SNS、購買履歴など、個人の「日常（ライフログ）」から得られる膨大な行動データを収集・分析。人間の行動科学とデータ解析を融合し、ウェルビーイングにアプローチします。</p>
-              
+              <p class="faculty-summary">
+                ウェアラブルデバイス、SNS、購買履歴など、個人の「日常（ライフログ）」から得られる膨大な行動データを収集・分析。人間の行動科学とデータ解析を融合し、ウェルビーイングにアプローチします。</p>
+
               <div class="specialties">
                 <span class="specialty-tag">行動データマイニング</span>
                 <span class="specialty-tag">スマートヘルスケア</span>
                 <span class="specialty-tag">ウェルビーイング設計</span>
               </div>
-              
-              <a href="#" class="btn btn-global">
+
+              <a href="#compare-table" class="btn btn-global">
                 <span>学部詳細を見る</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -146,7 +159,7 @@
     </section>
 
     <!-- 特徴・比較セクション -->
-    <section class="features-section">
+    <section class="features-section" id="compare-table">
       <div class="container">
         <h2 class="section-title">3つの学びの比較</h2>
         <div class="table-wrapper">
@@ -154,9 +167,12 @@
             <thead>
               <tr>
                 <th>項目</th>
-                <th class="th-info">疑似早稲田医学部<br><span class="table-deviation">偏差値: 79</span><br><span class="table-capacity">定員: 12名</span></th>
-                <th class="th-design">世界ジャポネズム化計画学部<br><span class="table-deviation">偏差値: 44</span><br><span class="table-capacity">定員: 1225名</span></th>
-                <th class="th-global">ライフログデータサイエンス学部<br><span class="table-deviation">偏差値: 62</span><br><span class="table-capacity">定員: 8名</span></th>
+                <th class="th-info">疑似稲田医学部<br><span class="table-deviation">偏差値: 79</span><br><span
+                    class="table-capacity">定員: 12名</span></th>
+                <th class="th-design">世界ジャポネズム化計画学部<br><span class="table-deviation">偏差値: 44</span><br><span
+                    class="table-capacity">定員: 1225名</span></th>
+                <th class="th-global">ライフログデータサイエンス学部<br><span class="table-deviation">偏差値: 62</span><br><span
+                    class="table-capacity">定員: 8名</span></th>
               </tr>
             </thead>
             <tbody>
@@ -202,7 +218,7 @@
               <li>
                 <i class="fa-solid fa-check env-icon"></i>
                 <div>
-                  <strong>疑似早稲田バーチャルクリニック</strong>
+                  <strong>疑似稲田バーチャルクリニック</strong>
                   <p>VR/ARを活用した疑似的な臨床訓練や、医療データ処理のためのシミュレーション環境。</p>
                 </div>
               </li>
@@ -246,6 +262,6 @@
   <footer class="site-footer">
     <p>&copy; 2026 チーム名</p>
   </footer>
-
+  <script src="../js/common.js"></script>
 </body>
 </html>
